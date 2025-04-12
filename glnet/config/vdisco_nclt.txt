@@ -1,0 +1,39 @@
+[MODEL]
+model = vdisco_nclt
+use_rgb = True
+cam_id = 0,1,2,3,4
+
+use_xyz = False
+normalize = True
+aggregation = fft
+
+# coordinates: polar, cartesian
+coordinates = polar
+
+# image_encoder: res101, res50, effb0, effb4
+# point_encoder: voxel, focal, unet
+image_meta_path = ~/Data/NCLT/image_meta.pkl
+image_encoder = res50
+point_encoder = unet
+
+output_dim = 256
+feature_dim = 256
+lidar_fix_num = 30000
+scene_centroid = 0.0, 0.0, 0.0
+
+xbounds = -70, 70
+ybounds = -22, 2
+zbounds = -70, 70
+
+Z = 100
+Y = 20
+X = 100
+
+loss = BatchHardTripletMarginLoss
+margin = 0.2
+
+radius = 40
+theta = 120
+
+Height = 224
+Width = 384

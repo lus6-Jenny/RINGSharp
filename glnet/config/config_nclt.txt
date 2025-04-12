@@ -1,0 +1,33 @@
+[DEFAULT]
+dataset = nclt
+dataset_folder = ~/Data/NCLT
+
+[TRAIN]
+num_workers = 16
+batch_size = 16
+batch_size_limit = 32
+batch_expansion_rate = 1.0
+batch_expansion_th = 0.7
+save_freq = 1
+eval_freq = 1
+
+lr = 1e-4
+epochs = 30
+scheduler_milestones = 20
+aug_mode = 3
+weight_decay = 1e-5
+
+# Splited sequences training
+train_file = train_2012-02-04_2012-03-17_25.0_50.0_0.2.pickle
+val_file = val_2012-02-04_2012-03-17_25.0_50.0_0.2.pickle
+# val_file = test_2012-02-04_2012-03-17_20.0_5.0.pickle
+# train_file = train_2012-02-04_2012-03-17_10.0_20.0_0.2.pickle
+# val_file = val_2012-02-04_2012-03-17_10.0_20.0_0.2.pickle
+# test_file = test_2012-02-04_2012-03-17_20.0_5.0.pickle
+
+# Multi sequences training
+# train_file = all_2012-02-04_2012-03-17_2012-05-26_2013-04-05_25.0_50.0_0.2.pickle
+# val_file = val_2012-02-04_2012-03-17_2012-05-26_2013-04-05_25.0_50.0_0.2.pickle
+# train_file = all_2012-02-04_2012-03-17_2012-05-26_2013-04-05_10.0_20.0_0.2.pickle
+# val_file = val_2012-02-04_2012-03-17_2012-05-26_2013-04-05_10.0_20.0_0.2.pickle
+test_file = test_2012-02-04_2012-03-17_20.0_5.0.pickle

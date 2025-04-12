@@ -1,0 +1,18 @@
+[MODEL]
+model = ring_sharp_l_nclt
+use_rgb = False
+use_xyz = False
+use_bev = True
+xyz_aug = True
+
+normalize = True
+aggregation = fft
+
+feature_dim = 128
+output_dim = 256
+
+loss = PRLoss
+margin = 0.2
+
+radius = 40
+theta = 100

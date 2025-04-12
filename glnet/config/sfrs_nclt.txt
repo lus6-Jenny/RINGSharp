@@ -1,0 +1,24 @@
+[MODEL]
+model = sfrs_nclt
+use_rgb = True
+use_panorama = True
+cam_id = 0,1,2,3,4
+
+use_xyz = False
+normalize = True
+use_pretrained_model = True
+
+# image_encoder: res18, res50, res101, res50, effb0, effb4, superpoint, vovnet99
+# point_encoder: voxel, focal, unet
+image_meta_path = ~/Data/NCLT/image_meta.pkl
+image_encoder = res18
+point_encoder = unet
+
+output_dim = 4096
+feature_dim = 128
+
+loss = BatchHardTripletMarginLoss
+margin = 0.2
+
+Height = 224
+Width = 384

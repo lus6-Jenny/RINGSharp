@@ -1,0 +1,20 @@
+[MODEL]
+model = anyloc_oxford
+use_rgb = True
+use_panorama = True
+cam_id = 0,1,2,3
+
+use_xyz = False
+normalize = True
+use_pretrained_model = True
+
+image_meta_path = ~/Data/Oxford_radar/image_meta.pkl
+
+output_dim = 4096
+feature_dim = 128
+
+loss = BatchHardTripletMarginLoss
+margin = 0.2
+
+Height = 320
+Width = 640

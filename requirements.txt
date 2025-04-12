@@ -1,0 +1,49 @@
+# tools
+tqdm  # Used widely
+timm  # Used in model_raster
+pandas  # Used widely
+Pillow  # Used widely to render images
+numpy==1.23.1
+scikit_image==0.19.3
+opencv-python<=4.5.1.48  # Used widely
+setuptools==67.6.0  # Used in setup.py, pinned to not break pytorch
+matplotlib==3.6.1  # Used for rendering
+seaborn==0.11.1  # Used for drawing box plot
+
+# torch + cuda11.3
+--extra-index-url https://download.pytorch.org/whl/cu113
+torch==1.11.0+cu113
+torchvision==0.12.0+cu113
+torchaudio==0.11.0
+
+# torch-radon
+pybind11
+demangler
+numexpr
+pyfftw
+healpy==1.16.3
+# -e git+https://github.com/matteo-ronchetti/torch-radon.git@v2#egg=torch_radon -e .
+
+# mmdetection
+mmdet==2.28
+mmdet3d==1.0.0rc4
+mmsegmentation==0.30.0
+--find-links https://download.openmmlab.com/mmcv/dist/cu113/torch1.11.0/index.html
+mmcv-full==1.7.0
+
+# train
+h5py
+wandb
+gdown
+e2cnn
+spconv
+einops
+open3d
+imutils
+pathlib
+omegaconf
+faiss-gpu
+SharedArray
+tensorboardX
+colour_demosaicing
+pytorch_metric_learning

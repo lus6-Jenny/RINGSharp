@@ -1,0 +1,30 @@
+[MODEL]
+model = ring_sharp_v_nclt
+use_rgb = True
+cam_id = 0,1,2,3,4
+
+use_depth = True
+use_submap = False
+use_pretrained_model = True
+
+use_xyz = False
+normalize = True
+aggregation = fft
+confidence = False
+
+# image_encoder: res101, res50, effb0, effb4, superpoint, vovnet99
+# point_encoder: voxel, focal, unet
+image_meta_path = ~/Data/NCLT/image_meta.pkl
+image_encoder = depth
+point_encoder = unet
+
+output_dim = 256
+
+loss = PRLoss
+margin = 0.2
+
+radius = 40
+theta = 100
+
+Height = 224
+Width = 384

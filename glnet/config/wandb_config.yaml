@@ -1,0 +1,22 @@
+"experiment":
+  # NETWORK PARAMS
+  "3D_net" : PVRCNN
+  "head" : UOTHead
+  "model_norm": "batch"
+  "num_points" : 4096
+  "feature_size" : 640
+  "cluster_size" : 64
+  "shared_embeddings": True
+  "feature_output_dim_3D" : 256
+  "point_cloud_augmentation": True
+  "point_cloud_jitter": False
+  # LOSS
+  "margin": 0.5
+  "loss_type": "triplet_random"
+  "norm_embeddings": True
+  "weight_metric_learning": 1
+  "weight_rot": 1
+  "sinkhorn_iter": 5
+  "sinkhorn_aux_loss": True
+  "sinkhorn_type": "unbalanced"
+  "hard_mining": True

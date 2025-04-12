@@ -1,0 +1,8 @@
+[MODEL]
+model = ring_plus_plus_oxford
+use_rgb = False
+use_xyz = False
+use_bev = False
+
+normalize = True
+aggregation = fft

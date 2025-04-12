@@ -1,0 +1,5 @@
+[MODEL]
+model = lcdnet_nclt
+coordinates = passthrough
+# Quantization steps for sectors (in degrees), rings (in meters) and z coordinate (in meters)
+quantization_step = 1., 0.3, 0.2

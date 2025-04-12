@@ -1,0 +1,12 @@
+[MODEL]
+model = egonn_nclt
+use_xyz = True
+xyz_aug = True
+
+coordinates = polar
+# Quantization steps for sectors (in degrees), rings (in meters) and z coordinate (in meters)
+quantization_step = 1., 0.3, 0.2
+
+loss = BatchHardTripletMarginLoss
+l_gammas = 1., 1., 1., 4.
+margin = 0.2

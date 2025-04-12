@@ -1,0 +1,32 @@
+[DEFAULT]
+dataset = oxford
+dataset_folder = ~/Data/Oxford_radar
+
+[TRAIN]
+num_workers = 16
+batch_size = 16
+batch_size_limit = 32
+batch_expansion_rate = 1.0
+batch_expansion_th = 0.7
+save_freq = 1
+eval_freq = 1
+
+lr = 1e-4
+epochs = 30
+scheduler_milestones = 20
+aug_mode = 3
+weight_decay = 1e-5
+
+# Splited sequences training
+train_file = train_2019-01-11-13-24-51_2019-01-15-13-06-37_25.0_50.0_0.2.pickle
+val_file = val_2019-01-11-13-24-51_2019-01-15-13-06-37_25.0_50.0_0.2.pickle
+# train_file = train_2019-01-11-13-24-51_2019-01-15-13-06-37_10.0_20.0_0.2.pickle
+# val_file = val_2019-01-11-13-24-51_2019-01-15-13-06-37_10.0_20.0_0.2.pickle
+test_file = test_2019-01-11-13-24-51_2019-01-15-13-06-37_20.0_5.0.pickle
+
+# Multi sequences training
+# train_file = all_2019-01-11-13-24-51_2019-01-15-13-06-37_10.0_20.0_0.2.pickle
+# val_file = val_2019-01-11-13-24-51_2019-01-15-13-06-37_10.0_20.0_0.2.pickle
+# train_file = all_2019-01-11-13-24-51_2019-01-15-13-06-37_25.0_50.0_0.2.pickle
+# val_file = val_2019-01-11-13-24-51_2019-01-15-13-06-37_25.0_50.0_0.2.pickle
+# test_file = all_2019-01-11-14-37-14_2019-01-17-12-48-25_20.0_5.0.pickle

@@ -1,0 +1,17 @@
+[MODEL]
+model = disco_oxford
+use_rgb = False
+use_xyz = False
+use_bev = True
+xyz_aug = True
+
+normalize = True
+aggregation = fft
+
+output_dim = 1024
+
+loss = BatchHardTripletMarginLoss
+margin = 0.2
+
+radius = 40
+theta = 120

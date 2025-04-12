@@ -1,0 +1,14 @@
+[MODEL]
+model = overlaptransformer_oxford
+use_rgb = False
+use_xyz = False
+use_range_image = True
+xyz_aug = True
+
+normalize = True
+
+feature_dim = 128
+output_dim = 256
+
+loss = BatchHardTripletMarginLoss
+margin = 0.2
