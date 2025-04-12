@@ -10,34 +10,34 @@
 **Maintainer:** [Sha Lu](https://lus6-jenny.github.io/), [lusha@zju.edu.cn](mailto:lusha@zju.edu.cn)
 
 ## 📌 Table of Contents
-- [Introduction](#🌍-introduction)
-- [Key Features](#⚡-key-features)
-- [Prerequisites](#🛠️-prerequisites)
-- [Installation](#🚀-installation)
-- [Data Preparation](#📂-data-preparation)
-- [Training](#🏗️-training)
-- [Evaluation](#📊-evaluation)
-- [Citation](#🔗-citation)
-- [Acknowledgments](#🙏-acknowledgments)
-- [License](#📝-license)
+- [Introduction](#introduction)
+- [Key Features](#key-features)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Data Preparation](#data-preparation)
+- [Training](#training)
+- [Evaluation](#evaluation)
+- [Citation](#citation)
+- [Acknowledgments](#acknowledgments)
+- [License](#license)
 
-## 🌍 Introduction
+## 🌍 Introduction <a name="introduction"></a>
 **RING#** is an **end-to-end**, **PR-by-PE** (Place Recognition by Pose Estimation) global localization framework that operates on **BEV** (Bird's Eye View) features **compatible with both vision and LiDAR sensors**. RING# incorporates a novel design that learns two **equivariant representations** from BEV features, enabling **globally convergent** and **computationally efficient** pose estimation. Comprehensive experiments on the NCLT and Oxford datasets show that RING# outperforms state-of-the-art methods in both vision and LiDAR modalities, validating the effectiveness of the proposed approach.
 
 <img src="imgs/overview.png" width="100%"/>
 
-## ⚡ Key Features
+## ⚡ Key Features <a name="key-features"></a>
 - **End-to-End Framework**: RING# is designed to be an end-to-end framework, allowing for seamless integration of all components.
 - **PR-by-PE Localization**: Derives place recognition similarity directly from correlation-based pose estimation, reducing error accumulation compared to traditional PR-then-PE localization methods.
 - **Vision and LiDAR Compatibility**: Supports both vision and LiDAR inputs by operating on BEV features, making it versatile for various robotic applications.
 - **Global Convergence**: Learns equivariant representations that handle pose transformations (x, y, θ), ensuring convergence to the optimal solution without initialization.
 - **Computational Efficiency**: Decouples pose estimation into rotation and translation, accelerated by Fast Fourier Transform (FFT) and GPU batch processing, enabling fast matching.
 
-## 🛠️ Prerequisites
+## 🛠️ Prerequisites <a name="prerequisites"></a>
 - [miniconda](https://docs.conda.io/projects/miniconda/en/latest/index.html) or [anaconda](https://www.anaconda.com/products/distribution)
 - [CUDA](https://developer.nvidia.com/cuda-downloads) (We have tested with CUDA 11.3 and 11.6)
 
-## 🚀 Installation
+## 🚀 Installation <a name="installation"></a>
 1. Create a virtual environment:
     ```bash
     conda create -n ringsharp python=3.8
@@ -80,9 +80,9 @@
     python setup.py develop
     ```
 
-## 📂 Data Preparation
+## 📂 Data Preparation <a name="data-preparation"></a>
 1.  Download datasets:
-    - [NCLT Dataset](http://www.nclt.cs.columbia.edu/)
+    - [NCLT Dataset](https://robots.engin.umich.edu/nclt/)
     - [Oxford Radar Robotcar Dataset](https://oxford-robotics-institute.github.io/radar-robotcar-dataset/)
     
     Organize the downloaded data into directories. Example structure:
@@ -179,7 +179,7 @@
     
     You can modify these files to suit your specific dataset and training parameters. For example, you can set the dataset type, root directory, evaluation set, loss function, batch size, learning rate, and other parameters.
 
-## 🏗️ Training
+## 🏗️ Training <a name="training"></a>
 The training script is located in the `tools` directory. You can run the training script with the following command:
 ```bash
 cd tools
@@ -201,7 +201,7 @@ python train.py --dataset_type nclt \
 - `--resume`: Flag to resume training from a checkpoint.
 - `--weight`: Path to the pre-trained model weights.
 
-## 📊 Evaluation
+## 📊 Evaluation <a name="evaluation"></a>
 1. Evaluate the model of RING# (RING#-V, RING#-L):
    - Pose estimation evaluation:
         ```bash
@@ -342,7 +342,7 @@ python train.py --dataset_type nclt \
 - `--radius`: List of revisit thresholds for evaluation.
 - `--viz`: Flag to visualize the evaluation results.
 
-## 🔗 Citation
+## 🔗 Citation <a name="citation"></a>
 If you find this work useful, please consider citing:
 ```bibtex
 @ARTICLE{10891747,
@@ -355,12 +355,12 @@ If you find this work useful, please consider citing:
   doi={10.1109/TRO.2025.3543267}}
 ```
 
-## 🙏 Acknowledgments
+## 🙏 Acknowledgments <a name="acknowledgments"></a>
 We thank the developers of the following open-source projects for their contributions:
 - [BEVDepth](https://github.com/Megvii-BaseDetection/BEVDepth)
 - [Simple-BEV](https://github.com/aharley/simple_bev)
 - [EgoNN](https://github.com/jac99/Egonn)
 
-## 📝 License
+## 📝 License <a name="license"></a>
 The code is released under the [MIT License](https://opensource.org/license/mit/).
 
