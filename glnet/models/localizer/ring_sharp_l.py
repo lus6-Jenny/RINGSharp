@@ -24,20 +24,19 @@ from glnet.models.backbones_2d.steerable_cnn import SteerableCNN
 
 
 class RINGSharpL(nn.Module):
-    def __init__(self, model_params: ModelParams, config=OxfordConfig()):
+    def __init__(self, model_params: ModelParams):
         super(RINGSharpL, self).__init__()
         
         self.yaw_mode = 1
         self.trans_mode = 0
 
-        self.config = config        
         self.params = model_params
         self.dataset = model_params.dataset_type
         self.use_bev = model_params.use_bev
         self.point_encoder = model_params.point_encoder
         self.bev_encoder = model_params.bev_encoder
-        self.config.feature_dim = self.feature_dim = model_params.feature_dim
-        self.config.output_dim = self.output_dim = model_params.output_dim
+        self.feature_dim = model_params.feature_dim
+        self.output_dim = model_params.output_dim
         self.use_submap = model_params.use_submap
 
         self.theta = model_params.theta

@@ -52,7 +52,7 @@
     cd RINGSharp
     pip install -r requirements.txt
     ```
-    *Note: If you encounter issues, check compatibility with your CUDA and PyTorch versions.*
+    *(Note: If you encounter issues, check compatibility with your CUDA and PyTorch versions.)*
 
 3. Install external dependencies from source:
 
@@ -127,7 +127,7 @@
         │   └── ...
         └── ...
     ```
-    *(Note: Adjust paths in config files according to your storage location)*
+    *(Note: Adjust paths in config files according to your storage location.)*
 
 2. Preprocess images:
    
@@ -143,6 +143,7 @@
    ```
 
 3. Generate training and evaluation data:
+
     These scripts create `.pickle` files containing metadata, poses, and other information for training and evaluation:
     
     ```bash
@@ -207,24 +208,24 @@ python train.py --dataset_type nclt \
         ```bash
         cd tools
         python evaluate_ours_pe.py --dataset_type nclt \
-                                --dataset_root ~/Data/NCLT \
-                                --exp_name ring_sharp_v_nclt_run1 \
-                                --eval_set test_2012-02-04_2012-03-17_20.0_5.0.pickle \
-                                --model_config ../glnet/config/ring_sharp_v.txt \
-                                --weight xxx.pth
+                                   --dataset_root ~/Data/NCLT \
+                                   --exp_name ring_sharp_v_nclt_run1 \
+                                   --eval_set test_2012-02-04_2012-03-17_20.0_5.0.pickle \
+                                   --model_config ../glnet/config/ring_sharp_v.txt \
+                                   --weight xxx.pth
         ```
    - Place recognition and global localization evaluation:
         ```bash
         cd tools
         python evaluate_ours_gl.py --dataset_type nclt \
-                                --dataset_root ~/Data/NCLT \
-                                --exp_name ring_sharp_v_nclt_run1 \
-                                --eval_set test_2012-02-04_2012-03-17_20.0_5.0.pickle \
-                                --model_config ../glnet/config/ring_sharp_v_nclt.txt \
-                                --weight xxx.pth \
-                                --n_rerank 1000 \
-                                --refine \
-                                # --one_shot (for one-stage global localization)
+                                   --dataset_root ~/Data/NCLT \
+                                   --exp_name ring_sharp_v_nclt_run1 \
+                                   --eval_set test_2012-02-04_2012-03-17_20.0_5.0.pickle \
+                                   --model_config ../glnet/config/ring_sharp_v_nclt.txt \
+                                   --weight xxx.pth \
+                                   --n_rerank 1000 \
+                                   --refine \
+                                   # --one_shot (for one-stage global localization)
         ```
 
 2. Evaluate the model of visual baselines:
@@ -275,11 +276,11 @@ python train.py --dataset_type nclt \
                                     --icp_refine
         # LCDNet
         python evaluate_lcdnet_pe.py --dataset_type nclt \
-                                    --dataset_root ~/Data/NCLT \
-                                    --exp_name lcdnet_nclt \
-                                    --eval_set test_2012-02-04_2012-03-17_20.0_5.0.pickle \
-                                    --model_config ../glnet/config/lcdnet_nclt.txt \
-                                    --icp_refine
+                                     --dataset_root ~/Data/NCLT \
+                                     --exp_name lcdnet_nclt \
+                                     --eval_set test_2012-02-04_2012-03-17_20.0_5.0.pickle \
+                                     --model_config ../glnet/config/lcdnet_nclt.txt \
+                                     --icp_refine
         # DiSCO, OverlapTransformer
         python evaluate_others_pe.py --dataset_type nclt \
                                      --dataset_root ~/Data/NCLT \
@@ -309,12 +310,12 @@ python train.py --dataset_type nclt \
                                     # --one_shot (for one-stage global localization)
         # LCDNet
         python evaluate_lcdnet_gl.py --dataset_type nclt \
-                                    --dataset_root ~/Data/NCLT \
-                                    --exp_name lcdnet_nclt \
-                                    --eval_set test_2012-02-04_2012-03-17_20.0_5.0.pickle \
-                                    --model_config ../glnet/config/lcdnet_nclt.txt \
-                                    --icp_refine
-                                    # --one_shot (for one-stage global localization)
+                                     --dataset_root ~/Data/NCLT \
+                                     --exp_name lcdnet_nclt \
+                                     --eval_set test_2012-02-04_2012-03-17_20.0_5.0.pickle \
+                                     --model_config ../glnet/config/lcdnet_nclt.txt \
+                                     --icp_refine
+                                     # --one_shot (for one-stage global localization)
         # DiSCO, OverlapTransformer
         python evaluate_others_gl.py --dataset_type nclt \
                                      --dataset_root ~/Data/NCLT \
